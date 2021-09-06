@@ -4,6 +4,7 @@ ADD .profile /.profile
 
 RUN apt update && apt install -y wget ca-certificates curl p7zip*  unzip vim htop nano screen apache2 bash-completion tmux \
 &&  curl https://rclone.org/install.sh | bash \
+&&  chmod 777 /run/screen \
 # 创建临时目录
 &&  mkdir /tmp/x && cd /tmp/x \
 # 安装fclone
@@ -18,3 +19,4 @@ RUN apt update && apt install -y wget ca-certificates curl p7zip*  unzip vim hto
 &&  chmod +x /usr/local/bin/ty \
 # 删除临时文件
 &&  rm /tmp/x -rf
+RUN echo "root:root" | chpasswd
