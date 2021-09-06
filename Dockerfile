@@ -2,7 +2,7 @@ FROM debian:10
 
 ADD .profile /.profile
 
-RUN apt update && apt install -y wget ca-certificates curl p7zip*  unzip vim htop nano sudo stress screen nload apache2 Gcc bash-completion tmux \
+RUN apt update && apt install -y wget ca-certificates curl p7zip*  unzip vim htop nano sudo stress screen nload apache2 gcc bash-completion tmux \
 &&  curl https://rclone.org/install.sh | bash \
 
 
