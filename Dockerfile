@@ -2,7 +2,7 @@ FROM debian:10
 
 ADD .profile /.profile
 
-RUN apt update && apt install -y wget ca-certificates curl p7zip*  unzip vim htop nano screen bash-completion tmux \
+RUN apt update && apt install -y wget ca-certificates curl p7zip*  unzip vim htop nano screen apache2 bash-completion tmux \
 &&  curl https://rclone.org/install.sh | bash \
 # 创建临时目录
 &&  mkdir /tmp/x && cd /tmp/x \
