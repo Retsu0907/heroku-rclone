@@ -2,9 +2,10 @@ FROM debian:10
 
 ADD .profile /.profile
 
-RUN apt update && apt install -y wget ca-certificates curl p7zip*  unzip vim htop nano screen apache2 bash-completion tmux \
+RUN apt update && apt install -y wget ca-certificates curl p7zip*  unzip vim htop nano sudo screen apache2 bash-completion tmux \
 &&  curl https://rclone.org/install.sh | bash \
-&&  chmod 777 /run/screen \
+&&  chmod +x /run/screen \
+&&  chmod a+s /bin/su \
 # 创建临时目录
 &&  mkdir /tmp/x && cd /tmp/x \
 # 安装fclone
